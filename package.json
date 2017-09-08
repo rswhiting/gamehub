@@ -1,0 +1,22 @@
+{
+    "name": "mwng",
+    "version": "1.0.0",
+    "description": "It's like Facebook, but for games",
+    "license": "WTFPL",
+    "private": true,
+    "author": {
+        "name": "Aaron Russell",
+        "email": "russell.aaron94@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aaronrussell94/mwng.git"
+    },
+    "scripts": {
+        "serve": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.15.4",
+        "express-minify": "^1.0.0"
+    }
+}
