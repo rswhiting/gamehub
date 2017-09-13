@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "express": "^4.15.4",
+        "express-minify": "^1.0.0",
         "pug": "^2.0.0-rc.4"
     }
 }
