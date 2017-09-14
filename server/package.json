@@ -1,5 +1,5 @@
 {
-    "name": "mwng",
+    "name": "mwng-server",
     "version": "1.0.0",
     "description": "It's like Facebook, but for games",
     "license": "WTFPL",
@@ -16,8 +16,6 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "express": "^4.15.4",
-        "express-minify": "^1.0.0",
-        "pug": "^2.0.0-rc.4"
+        "express": "^4.15.4"
     }
 }

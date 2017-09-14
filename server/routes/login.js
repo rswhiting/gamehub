@@ -2,8 +2,9 @@
 
 const login = require("express").Router();
 
-login.get("/", (req, res) => {
-    res.render("login");
+login.post("/", (req, res) => {
+    console.log(req);
+    res.send(200);
 });
 
 module.exports = login;
