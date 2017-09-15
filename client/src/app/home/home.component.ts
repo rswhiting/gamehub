@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'mwng-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    selector: "mwng-home",
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.css"]
 })
 export class HomeComponent { }
