@@ -1,5 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 import { MdButtonModule } from "@angular/material";
 import { MdCardModule } from "@angular/material";
 import { MdInputModule } from "@angular/material";
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     imports: [
         BrowserAnimationsModule,
         BrowserModule,
+        FormsModule,
         MdButtonModule,
         MdCardModule,
         MdInputModule,

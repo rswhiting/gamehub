@@ -5,4 +5,11 @@ import { Component } from "@angular/core";
     templateUrl: "./login.component.html",
     styleUrls: ["./login.component.css"]
 })
-export class LoginComponent { }
+export class LoginComponent {
+    email: string;
+    password: string;
+
+    logIn(): void {
+        console.log(this);
+    }
+}
