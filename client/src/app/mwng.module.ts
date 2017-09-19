@@ -10,6 +10,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthenticationService } from "./services/authentication.service";
+import { UserService } from "./services/user.service";
 
 import { MwngComponent } from "./mwng.component";
 import { HomeComponent } from "./home/home.component";
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes)
     ],
     providers: [
-        AuthenticationService
+        AuthenticationService,
+        UserService
     ],
     bootstrap: [MwngComponent]
 })

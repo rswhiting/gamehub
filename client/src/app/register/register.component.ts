@@ -1,11 +1,22 @@
 import { Component } from "@angular/core";
 
-import { AuthenticationService } from "../services/authentication.service";
+import { UserService } from "../services/user.service";
 
 @Component({
     selector: "mwng-register",
     templateUrl: "./register.component.html"
 })
 export class RegisterComponent {
-    constructor(private authenticationService: AuthenticationService) { }
+    email: string;
+    name: string;
+    password: string;
+
+    constructor(private userService: UserService) { }
+
+    register(): void {
+        this.userService.register(
+            this.email,
+            this.password,
+            this.name);
+    }
 }

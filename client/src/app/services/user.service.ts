@@ -2,14 +2,15 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class AuthenticationService {
+export class UserService {
     constructor(private http: HttpClient) { }
 
-    authenticate(email: string, password: string): void {
+    register(email: string, password: string, name: string): void {
         this.http
-            .post("http://localhost:8080/login", {
+            .post("http://localhost:8080/register", {
                 email: email,
-                password: password
+                password: password,
+                name: name
             })
             .subscribe();
     }
