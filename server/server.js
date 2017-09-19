@@ -3,13 +3,11 @@
 const express = require("express");
 const app = express();
 
-const cors = require("cors");
+const bodyParser = require("body-parser");
 const routes = require("./routes");
 
-app.use("/", routes);
 app.use((req, res, next) => {
-    // Website you wish to allow to connect
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
 
     // Request methods you wish to allow
     res.setHeader(
@@ -26,6 +24,9 @@ app.use((req, res, next) => {
     // Pass to next layer of middleware
     next();
 });
+
+app.use(bodyParser.json());
+app.use("/", routes);
 
 app.listen(8080, () => {
     console.log("Listening at http://localhost:8080");

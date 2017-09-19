@@ -3,8 +3,8 @@
 const register = require("express").Router();
 
 register.post("/", (req, res) => {
-    console.log(req);
-    res.send(200);
+    console.log(req.body);
+    res.sendStatus(200);
 });
 
 module.exports = register;
