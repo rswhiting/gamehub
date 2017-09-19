@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mwng-primary: mat-palette($mat-red);
+$mwng-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+$mwng-warn:    mat-palette($mat-orange);
+
+$mwng-theme: mat-light-theme($mwng-primary, $mwng-accent, $mwng-warn);
+@include angular-material-theme($mwng-theme);

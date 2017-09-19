@@ -17,6 +17,7 @@
             "tsconfig": "tsconfig.json",
             "prefix": "app",
             "styles": [
+                "mwng-theme.scss",
                 "styles.css"
             ],
             "scripts": [],
