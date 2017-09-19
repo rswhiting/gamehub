@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MdButtonModule } from "@angular/material";
 import { MdCardModule } from "@angular/material";
 import { MdInputModule } from "@angular/material";
+import { MdMenuModule } from "@angular/material";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
@@ -14,6 +15,7 @@ import { MwngComponent } from "./mwng.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { RegisterComponent } from "./register/register.component";
 
 const appRoutes: Routes = [
     {
@@ -30,6 +32,10 @@ const appRoutes: Routes = [
         component: LoginComponent
     },
     {
+        path: "register",
+        component: RegisterComponent
+    },
+    {
         path: "**",
         component: PageNotFoundComponent
     }
@@ -40,7 +46,8 @@ const appRoutes: Routes = [
         MwngComponent,
         HomeComponent,
         LoginComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -50,9 +57,12 @@ const appRoutes: Routes = [
         MdButtonModule,
         MdCardModule,
         MdInputModule,
+        MdMenuModule,
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [AuthenticationService],
+    providers: [
+        AuthenticationService
+    ],
     bootstrap: [MwngComponent]
 })
 export class MwngModule { }

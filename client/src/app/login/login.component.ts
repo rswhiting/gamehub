@@ -4,8 +4,7 @@ import { AuthenticationService } from "../services/authentication.service";
 
 @Component({
     selector: "mwng-login",
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.css"]
+    templateUrl: "./login.component.html"
 })
 export class LoginComponent {
     email: string;
