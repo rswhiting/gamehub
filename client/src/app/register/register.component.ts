@@ -7,16 +7,14 @@ import { UserService } from "../services/user.service";
     templateUrl: "./register.component.html"
 })
 export class RegisterComponent {
+    username: string;
     email: string;
-    name: string;
     password: string;
 
     constructor(private userService: UserService) { }
 
     register(): void {
-        this.userService.register(
-            this.email,
-            this.password,
-            this.name);
+        this.userService.register(this.username, this.email, this.password)
+            .subscribe(() => { }, error => { console.log(error); });
     }
 }
