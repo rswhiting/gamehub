@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$gamehub-primary: mat-palette($mat-red);
+$gamehub-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+
+$gamehub-theme: mat-light-theme($gamehub-primary, $gamehub-accent);
+@include angular-material-theme($gamehub-theme);
