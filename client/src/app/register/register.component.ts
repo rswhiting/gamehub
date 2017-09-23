@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { MdSnackBar } from "@angular/material";
 
 import { UserService } from "../services/user.service";
 
@@ -11,10 +12,16 @@ export class RegisterComponent {
     email: string;
     password: string;
 
-    constructor(private userService: UserService) { }
+    constructor(
+        private snackBar: MdSnackBar,
+        private userService: UserService) { }
 
     register(): void {
         this.userService.register(this.username, this.email, this.password)
-            .subscribe(() => { console.log("Success!") }, error => { console.log("Error!"); });
+            .subscribe(
+            () => { },
+            error => {
+                this.snackBar.open(error.error, "Dismiss");
+            });
     }
 }

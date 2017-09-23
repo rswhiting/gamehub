@@ -6,6 +6,7 @@ import { MdButtonModule } from "@angular/material";
 import { MdCardModule } from "@angular/material";
 import { MdInputModule } from "@angular/material";
 import { MdMenuModule } from "@angular/material";
+import { MdSnackBarModule } from "@angular/material";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
         MdCardModule,
         MdInputModule,
         MdMenuModule,
+        MdSnackBarModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [

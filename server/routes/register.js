@@ -24,7 +24,7 @@ register.post("/", (req, res) => {
         res.status(200).send({});
     }).catch(reason => {
         console.error(reason);
-        res.status(500).send("Registration failed!");
+        res.status(500).send("Registration failed! This username or email address might be taken.");
     });
 });
 
