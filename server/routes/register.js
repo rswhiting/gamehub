@@ -17,13 +17,14 @@ register.post("/", (req, res) => {
         return db.collection("users").insertOne({
             username: username,
             email: email,
-            passwordHash: passwordHash
+            passwordHash: passwordHash,
+            salt: salt
         });
     }).then(() => {
-        res.sendStatus(200);
+        res.status(200).send({});
     }).catch(reason => {
         console.error(reason);
-        res.status(500).send("Registration failed.");
+        res.status(500).send("Registration failed!");
     });
 });
 

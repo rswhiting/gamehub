@@ -3,16 +3,18 @@ import { Component } from "@angular/core";
 import { AuthenticationService } from "../services/authentication.service";
 
 @Component({
-    selector: "mwng-login",
+    selector: "gh-login",
     templateUrl: "./login.component.html"
 })
 export class LoginComponent {
-    email: string;
+    usernameOrEmail: string;
     password: string;
 
     constructor(private authenticationService: AuthenticationService) { }
 
     logIn(): void {
-        this.authenticationService.authenticate(this.email, this.password);
+        this.authenticationService.authenticate(
+            this.usernameOrEmail,
+            this.password);
     }
 }

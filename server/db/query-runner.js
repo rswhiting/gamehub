@@ -1,7 +1,7 @@
 "use strict";
 
 const MongoClient = require("mongodb").MongoClient;
-const uri = "mongodb://localhost:27017/mwng";
+const uri = "mongodb://localhost:27017/gamehub";
 
 module.exports.run = query => {
     return new Promise((resolve, reject) => {

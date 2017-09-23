@@ -117,13 +117,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "mwng",
+            "gamehub",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "mwng",
+            "gamehub",
             "kebab-case"
         ],
         "use-input-property-decorator": true,

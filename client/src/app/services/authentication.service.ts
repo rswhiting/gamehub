@@ -5,10 +5,10 @@ import { Injectable } from "@angular/core";
 export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
-    authenticate(email: string, password: string): void {
+    authenticate(usernameOrEmail: string, password: string): void {
         this.http
             .post("http://localhost:8080/login", {
-                email: email,
+                usernameOrEmail: usernameOrEmail,
                 password: password
             })
             .subscribe();

@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
-        "name": "mwng"
+        "name": "gamehub"
     },
     "apps": [
         {
@@ -17,7 +17,7 @@
             "tsconfig": "tsconfig.json",
             "prefix": "app",
             "styles": [
-                "mwng-theme.scss",
+                "gamehub-theme.scss",
                 "styles.css"
             ],
             "scripts": [],

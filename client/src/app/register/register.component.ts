@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { UserService } from "../services/user.service";
 
 @Component({
-    selector: "mwng-register",
+    selector: "gh-register",
     templateUrl: "./register.component.html"
 })
 export class RegisterComponent {
@@ -15,6 +15,6 @@ export class RegisterComponent {
 
     register(): void {
         this.userService.register(this.username, this.email, this.password)
-            .subscribe(() => { }, error => { console.log(error); });
+            .subscribe(() => { console.log("Success!") }, error => { console.log("Error!"); });
     }
 }
