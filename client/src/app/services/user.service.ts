@@ -12,7 +12,9 @@ export class UserService {
         password: string):
         Observable<Object> {
         return this.http
-            .post("http://localhost:8080/register", {
+            .post(
+            "http://localhost:8080/register",
+            {
                 username: username,
                 email: email,
                 password: password
