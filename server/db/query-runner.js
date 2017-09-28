@@ -10,9 +10,9 @@ module.exports.run = query => {
                 reject(error);
             }
 
-            query(db).then(() => {
+            query(db).then(value => {
                 db.close();
-                resolve();
+                resolve(value);
             }).catch(reason => {
                 reject(reason);
             });

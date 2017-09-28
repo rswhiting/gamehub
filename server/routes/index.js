@@ -1,15 +1,8 @@
 "use strict";
 
 const routes = require("express").Router();
+const game = require("./game.js");
 
-const login = require("./login.js");
-const register = require("./register.js");
-
-routes.get("/", (req, res) => {
-    res.redirect("/login");
-});
-
-routes.use("/login", login);
-routes.use("/register", register);
+routes.use("/game", game);
 
 module.exports = routes;
