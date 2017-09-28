@@ -1,10 +1,14 @@
-.credential-card {
-    max-width: 350px;
-    margin: 100px auto 0 auto;
+.full-input {
+    width: 100%;
 }
 
-.full-width {
-    width: 100%;
+.half-input {
+    width: 49%;
+}
+
+.mat-card > .mat-toolbar {
+    margin: -24px 0 24px -24px !important;
+    width: calc(100% + 48px);
 }
 
 .mat-menu-item > .material-icons {

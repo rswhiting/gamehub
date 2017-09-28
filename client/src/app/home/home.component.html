@@ -1,1 +1,17 @@
-<button (click)="doIt()" color="primary" md-raised-button>Do it!</button>
+<md-card class="event-card">
+    <md-toolbar color="primary">Create event</md-toolbar>
+    <md-card-content>
+        <md-form-field class="full-input">
+            <input mdInput name="game" [(ngModel)]="game" placeholder="Game">
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput name="minPlayers" [(ngModel)]="minPlayers" placeholder="Min. # of players" type="number">
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput name="maxPlayers" [(ngModel)]="maxPlayers" placeholder="Max. # of players" type="number">
+        </md-form-field>
+    </md-card-content>
+    <md-card-actions align="right">
+        <button (click)="doIt()" color="accent" md-raised-button>DO IT!</button>
+    </md-card-actions>
+</md-card>

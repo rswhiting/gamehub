@@ -2,11 +2,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MdButtonModule } from "@angular/material";
+import { MdCardModule } from "@angular/material";
 import { MdInputModule } from "@angular/material";
+import { MdToolbarModule } from "@angular/material";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
 
+import { EventService } from "./services/event.service";
 import { GameService } from "./services/game.service";
 
 import { GameHubComponent } from "./gamehub.component";
@@ -41,10 +44,13 @@ const appRoutes: Routes = [
         FormsModule,
         HttpClientModule,
         MdButtonModule,
+        MdCardModule,
         MdInputModule,
+        MdToolbarModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [
+        EventService,
         GameService
     ],
     bootstrap: [GameHubComponent]
