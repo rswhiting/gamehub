@@ -24,8 +24,7 @@ export class NewEventDialogComponent {
         let event: Event = {
             game: game,
             location: "Enterprise",
-            startTime: new Date(),
-            endTime: new Date()
+            time: new Date()
         };
 
         // TODO: return this data to HomeComponent

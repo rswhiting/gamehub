@@ -1,1 +1,18 @@
 <button (click)="openNewEventDialog()" md-raised-button>CREATE EVENT</button>
+<!-- <li *ngFor="let event of events">
+    {{event | json}}
+</li> -->
+<md-card class="event-card" *ngFor="let event of events">
+    <md-card-title>
+        {{event.game.name}}
+    </md-card-title>
+    <md-card-content>
+        <p><strong>Location:</strong> {{event.location}}</p>
+        <p><strong>Starts at:</strong> {{event.time | date:"shortTime"}}</p>
+        <p><strong>Players:</strong> {{event.game.minPlayers}} - {{event.game.maxPlayers}}</p>
+        <p><strong>Playing time:</strong> {{event.game.minTime}} - {{event.game.maxTime}} minutes</p>
+    </md-card-content>
+    <md-card-actions align="right">
+        <button color="accent" md-button>JOIN</button>
+    </md-card-actions>
+</md-card>
