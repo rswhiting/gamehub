@@ -6,11 +6,12 @@
     width: 49%;
 }
 
-.mat-card > .mat-toolbar {
+.mat-dialog-title > .mat-toolbar {
     margin: -24px 0 24px -24px !important;
     width: calc(100% + 48px);
 }
 
+/* REMOVE THIS SOMEDAY IF YOU DON'T END UP USING MENUS */
 .mat-menu-item > .material-icons {
     bottom: 2px;
     margin-right: 5px;

@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
+import { MdDialog } from "@angular/material";
 
 import { Event } from "../models/event";
 import { EventService } from "../services/event.service";
 import { Game } from "../models/game";
+import { NewEventDialogComponent } from "../new-event-dialog/new-event-dialog.component";
 
 @Component({
     selector: "gh-home",
@@ -12,30 +14,21 @@ import { Game } from "../models/game";
 export class HomeComponent {
     events: Event[] = [];
 
-    constructor(private eventService: EventService) {
+    constructor(private eventService: EventService, private dialog: MdDialog) {
         this.getEvents();
     }
 
     getEvents(): void {
-        this.eventService.getEvents().subscribe(value => console.log(value), error => console.log(error));
+        this.eventService.getEvents().subscribe(value => console.log(value));
     }
 
-    doIt(): void {
-        let game: Game = {
-            name: "Avalon",
-            minPlayers: 5,
-            maxPlayers: 10,
-            minTime: 30,
-            maxTime: 90
-        };
-        let event: Event = {
-            game: game,
-            location: "Enterprise",
-            startTime: new Date(),
-            endTime: new Date()
-        };
+    openNewEventDialog(): void {
+        let dialogReference = this.dialog.open(NewEventDialogComponent);
+        dialogReference.afterClosed()
+            .subscribe(newEvent => this.putEvent(newEvent));
+    }
 
-        this.eventService.putEvent(event)
-            .subscribe(() => this.getEvents());
+    putEvent(event: Event): void {
+        this.eventService.putEvent(event).subscribe(() => this.getEvents());
     }
 }

@@ -1,6 +1,7 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { MatDialogModule } from "@angular/material";
 import { MdButtonModule } from "@angular/material";
 import { MdCardModule } from "@angular/material";
 import { MdInputModule } from "@angular/material";
@@ -14,6 +15,7 @@ import { GameService } from "./services/game.service";
 
 import { GameHubComponent } from "./gamehub.component";
 import { HomeComponent } from "./home/home.component";
+import { NewEventDialogComponent } from "./new-event-dialog/new-event-dialog.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     declarations: [
         GameHubComponent,
         HomeComponent,
+        NewEventDialogComponent,
         PageNotFoundComponent
     ],
     imports: [
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        MatDialogModule,
         MdButtonModule,
         MdCardModule,
         MdInputModule,
@@ -52,6 +56,9 @@ const appRoutes: Routes = [
     providers: [
         EventService,
         GameService
+    ],
+    entryComponents: [
+        NewEventDialogComponent
     ],
     bootstrap: [GameHubComponent]
 })
