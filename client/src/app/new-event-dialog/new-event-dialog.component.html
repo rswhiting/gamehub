@@ -11,6 +11,18 @@
     <md-form-field class="half-input">
         <input mdInput name="maxPlayers" [(ngModel)]="maxPlayers" placeholder="Max. # of players" type="number">
     </md-form-field>
+    <md-form-field class="half-input">
+        <input mdInput name="minTime" [(ngModel)]="minTime" placeholder="Min. playtime" type="number">
+    </md-form-field>
+    <md-form-field class="half-input">
+        <input mdInput name="maxTime" [(ngModel)]="maxTime" placeholder="Max. playtime" type="number">
+    </md-form-field>
+    <md-form-field class="half-input">
+        <input mdInput name="location" [(ngModel)]="lcation" placeholder="Location">
+    </md-form-field>
+    <md-form-field class="half-input">
+        <input mdInput name="time" [(ngModel)]="time" placeholder="time" type="datetime-local">
+    </md-form-field>
 </div>
 <div mdDialogActions align="end">
     <button color="primary" md-button mdDialogClose>CANCEL</button>
