@@ -12,5 +12,11 @@ function sanitizeEvent(event) {
 }
 
 function sanitizeGame(game) {
-
+    return {
+        name: game.name,
+        minPlayers: game.minPlayers,
+        maxPlayers: game.maxPlayers,
+        minTime: game.minTime,
+        maxTime: game.maxTime
+    }
 }
