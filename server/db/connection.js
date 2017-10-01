@@ -3,12 +3,18 @@
 const MongoClient = require("mongodb").MongoClient;
 const uri = "mongodb://localhost:27017/gamehub";
 
-module.exports.run = query => {
+let connection;
+
+module.exports.getDb = () => {
+    return connection;
+};
+
+module.exports.initialize = () => {
     return MongoClient.connect(uri)
         .then(db => {
-            return query(db);
+            return connection = db;
         })
         .catch(reason => {
             console.error(reason);
         });
-}
+};

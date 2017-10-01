@@ -1,19 +1,19 @@
 "use strict";
 
+const connection = require("../db/connection.js");
 const event = require("express").Router();
-const queryRunner = require("../db/query-runner.js");
 const sanitizers = require("../db/sanitizers.js");
 
 event.get("/", (req, res) => {
-    queryRunner.run(db => db.collection("events").find({}))
+    connection.getDb().collection("events").find({}).toArray()
         .then(result => {
-            console.log(result.toArray());
+            res.send(result);
         });
 });
 
 event.put("/", (req, res) => {
     let event = sanitizers.sanitizeEvent(req.body);
-    queryRunner.run(db => db.collection("events").insertOne(event))
+    connection.getDb().collection("events").insertOne(event)
         .then(() => {
             res.sendStatus(204);
         });

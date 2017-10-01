@@ -4,8 +4,11 @@ const express = require("express");
 const app = express();
 
 const bodyParser = require("body-parser");
+
+const connection = require("./db/connection.js");
 const routes = require("./routes");
-require("./db/setup.js");
+
+connection.initialize();
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
