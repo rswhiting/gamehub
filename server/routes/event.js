@@ -5,7 +5,7 @@ const event = require("express").Router();
 const sanitizers = require("../db/sanitizers.js");
 
 event.get("/", (req, res) => {
-    connection.getDb().collection("events").find({}).toArray()
+    connection.getDb().collection("events").find().toArray()
         .then(result => {
             res.send(result);
         });
