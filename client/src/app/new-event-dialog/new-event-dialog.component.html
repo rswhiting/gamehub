@@ -6,19 +6,21 @@
         <input mdInput name="gameName" [(ngModel)]="newEvent.game.name" placeholder="Game">
     </md-form-field>
     <md-form-field class="half-input">
-        <input mdInput name="minPlayers" [(ngModel)]="newEvent.game.minPlayers" placeholder="Min. # of players" type="number">
+        <input mdInput max="{{newEvent.game.maxPlayers}}" min="1" name="minPlayers" [(ngModel)]="newEvent.game.minPlayers" placeholder="Min. # of players"
+            type="number">
     </md-form-field>
     <md-form-field class="half-input">
-        <input mdInput name="maxPlayers" [(ngModel)]="newEvent.game.maxPlayers" placeholder="Max. # of players" type="number">
+        <input mdInput min="{{newEvent.game.minPlayers}}" name="maxPlayers" [(ngModel)]="newEvent.game.maxPlayers" placeholder="Max. # of players"
+            type="number">
     </md-form-field>
     <md-form-field class="half-input">
         <input mdInput name="location" [(ngModel)]="newEvent.location" placeholder="Location">
     </md-form-field>
     <md-form-field class="half-input">
-        <input mdInput name="time" [(ngModel)]="newEvent.time" placeholder="time" type="datetime-local">
+        <input mdInput name="time" [(ngModel)]="time" placeholder="time" type="time">
     </md-form-field>
 </div>
 <div mdDialogActions align="end">
     <button color="primary" md-button mdDialogClose>CANCEL</button>
-    <button (click)="doIt()" color="accent" md-button>DO IT!</button>
+    <button (click)="createEvent()" color="accent" [disabled]="!isValid()" md-button>CREATE EVENT</button>
 </div>

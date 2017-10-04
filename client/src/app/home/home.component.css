@@ -1,4 +1,10 @@
+.create-event-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
 .event-card {
-    max-width: 450px;
     margin: 40px auto 40px auto;
+    max-width: 450px;
 }

@@ -1,3 +1,7 @@
+body {
+    margin: 0 0 0 0;
+}
+
 .full-input {
     width: 100%;
 }
@@ -13,8 +17,8 @@
 
 /* REMOVE THIS SOMEDAY IF YOU DON'T END UP USING MENUS */
 .mat-menu-item > .material-icons {
-    bottom: 2px;
     margin-right: 5px;
     position: relative;
+    bottom: 2px;
     vertical-align: middle;
 }

@@ -16,25 +16,28 @@ export class NewEventDialogComponent {
             maxPlayers: 10
         },
         location: "",
-        time: new Date()
+        time: undefined
     };
+    time: string = "12:00";
 
     constructor(
         private eventService: EventService,
         private dialogRef: MdDialogRef<NewEventDialogComponent>) { }
 
-    doIt(): void {
-        let game: Game = {
-            name: "Avalon",
-            minPlayers: 5,
-            maxPlayers: 10
-        };
-        let event: Event = {
-            game: game,
-            location: "Enterprise",
-            time: new Date()
-        };
+    createEvent(): void {
+        let splitTime = this.time.split(":");
 
-        this.dialogRef.close(event);
+        this.newEvent.time = new Date();
+        this.newEvent.time.setHours(
+            parseInt(splitTime[0], 10),
+            parseInt(splitTime[1], 10));
+        this.dialogRef.close(this.newEvent);
+    }
+
+    isValid(): boolean {
+        return this.newEvent.game.name.length > 0
+            && this.newEvent.game.minPlayers > 0
+            && this.newEvent.game.minPlayers <= this.newEvent.game.maxPlayers
+            && this.newEvent.location.length > 0;
     }
 }
