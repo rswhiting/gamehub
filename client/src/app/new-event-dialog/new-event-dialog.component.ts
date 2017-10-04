@@ -9,6 +9,16 @@ import { Game } from "../models/game";
     templateUrl: "./new-event-dialog.component.html"
 })
 export class NewEventDialogComponent {
+    newEvent: Event = {
+        game: {
+            name: "",
+            minPlayers: 1,
+            maxPlayers: 10
+        },
+        location: "",
+        time: new Date()
+    };
+
     constructor(
         private eventService: EventService,
         private dialogRef: MdDialogRef<NewEventDialogComponent>) { }
@@ -17,9 +27,7 @@ export class NewEventDialogComponent {
         let game: Game = {
             name: "Avalon",
             minPlayers: 5,
-            maxPlayers: 10,
-            minTime: 30,
-            maxTime: 90
+            maxPlayers: 10
         };
         let event: Event = {
             game: game,
@@ -27,7 +35,6 @@ export class NewEventDialogComponent {
             time: new Date()
         };
 
-        // TODO: return this data to HomeComponent
         this.dialogRef.close(event);
     }
 }

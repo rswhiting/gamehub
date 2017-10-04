@@ -25,7 +25,11 @@ export class HomeComponent {
     }
 
     openNewEventDialog(): void {
-        let dialogReference = this.dialog.open(NewEventDialogComponent);
+        let dialogReference = this.dialog.open(
+            NewEventDialogComponent,
+            {
+                width: "600px"
+            });
         dialogReference.beforeClose()
             .filter(result => result != "")
             .subscribe(newEvent => this.putEvent(newEvent));
