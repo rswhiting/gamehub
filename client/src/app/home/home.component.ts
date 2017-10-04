@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { MdDialog } from "@angular/material";
-import 'rxjs/add/operator/filter';
+import "rxjs/add/operator/filter";
 
 import { Event } from "../models/event";
 import { EventService } from "../services/event.service";
@@ -25,13 +25,13 @@ export class HomeComponent {
     }
 
     openNewEventDialog(): void {
-        let dialogReference = this.dialog.open(
+        const dialogReference = this.dialog.open(
             NewEventDialogComponent,
             {
                 width: "600px"
             });
         dialogReference.beforeClose()
-            .filter(result => result != "")
+            .filter(result => result !== "")
             .subscribe(newEvent => this.putEvent(newEvent));
     }
 

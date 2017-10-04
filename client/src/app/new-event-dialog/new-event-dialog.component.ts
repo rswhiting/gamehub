@@ -18,14 +18,14 @@ export class NewEventDialogComponent {
         location: "",
         time: undefined
     };
-    time: string = "12:00";
+    time = "12:00";
 
     constructor(
         private eventService: EventService,
         private dialogRef: MdDialogRef<NewEventDialogComponent>) { }
 
     createEvent(): void {
-        let splitTime = this.time.split(":");
+        const splitTime = this.time.split(":");
 
         this.newEvent.time = new Date();
         this.newEvent.time.setHours(
