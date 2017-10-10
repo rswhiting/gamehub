@@ -1,7 +1,7 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { MatDialogModule, MatTooltipModule, MdButtonModule, MdCardModule, MdInputModule, MdToolbarModule } from "@angular/material";
+import { MatDialogModule, MatTooltipModule, MatButtonModule, MatCardModule, MatInputModule, MatToolbarModule } from "@angular/material";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
@@ -44,10 +44,10 @@ const appRoutes: Routes = [
         HttpClientModule,
         MatDialogModule,
         MatTooltipModule,
-        MdButtonModule,
-        MdCardModule,
-        MdInputModule,
-        MdToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatInputModule,
+        MatToolbarModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [

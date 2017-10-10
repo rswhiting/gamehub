@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { MdDialog } from "@angular/material";
+import { MatDialog } from "@angular/material";
 import "rxjs/add/operator/filter";
 
 import { Event } from "../models/event";
@@ -15,7 +15,7 @@ import { NewEventDialogComponent } from "../new-event-dialog/new-event-dialog.co
 export class HomeComponent {
     events: Event[] = [];
 
-    constructor(private eventService: EventService, private dialog: MdDialog) {
+    constructor(private eventService: EventService, private dialog: MatDialog) {
         this.getEvents();
     }
 

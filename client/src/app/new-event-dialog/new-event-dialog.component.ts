@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { MdDialogRef } from "@angular/material";
+import { MatDialogRef } from "@angular/material";
 
 import { Event } from "../models/event";
 import { EventService } from "../services/event.service";
@@ -22,7 +22,7 @@ export class NewEventDialogComponent {
 
     constructor(
         private eventService: EventService,
-        private dialogRef: MdDialogRef<NewEventDialogComponent>) { }
+        private dialogRef: MatDialogRef<NewEventDialogComponent>) { }
 
     createEvent(): void {
         const splitTime = this.time.split(":");

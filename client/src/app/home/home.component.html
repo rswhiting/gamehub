@@ -1,16 +1,19 @@
-<button class="create-event-button" (click)="openNewEventDialog()" md-fab mdTooltip="Create event" mdTooltipPosition="before">
+<button class="create-event-button" (click)="openNewEventDialog()" mat-fab matTooltip="Create event" matTooltipPosition="before">
     <i class="material-icons">add</i>
 </button>
-<md-card class="event-card" *ngFor="let event of events">
-    <md-card-title>
+<mat-card class="event-card" *ngFor="let event of events">
+    <mat-card-title>
         {{event.game.name}}
-    </md-card-title>
-    <md-card-content>
-        <p><strong>Location:</strong> {{event.location}}</p>
-        <p><strong>Starts at:</strong> {{event.time | date:"shortTime"}}</p>
-        <p><strong>Players:</strong> {{event.game.minPlayers}} - {{event.game.maxPlayers}}</p>
-    </md-card-content>
-    <md-card-actions align="right">
-        <button color="accent" md-button>JOIN</button>
-    </md-card-actions>
-</md-card>
+    </mat-card-title>
+    <mat-card-content>
+        <p>
+            <strong>Location:</strong> {{event.location}}</p>
+        <p>
+            <strong>Starts at:</strong> {{event.time | date:"shortTime"}}</p>
+        <p>
+            <strong>Players:</strong> {{event.game.minPlayers}} - {{event.game.maxPlayers}}</p>
+    </mat-card-content>
+    <mat-card-actions align="right">
+        <button color="accent" mat-button>JOIN</button>
+    </mat-card-actions>
+</mat-card>
