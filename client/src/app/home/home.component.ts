@@ -31,7 +31,7 @@ export class HomeComponent {
                 width: "600px"
             });
         dialogReference.beforeClose()
-            .filter(result => result !== "")
+            .filter(result => result)
             .subscribe(newEvent => this.putEvent(newEvent));
     }
 
