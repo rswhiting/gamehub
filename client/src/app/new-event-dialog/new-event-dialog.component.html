@@ -1,26 +1,28 @@
 <div mdDialogTitle>
     <md-toolbar color="primary">Create event</md-toolbar>
 </div>
-<div mdDialogContent>
-    <md-form-field class="full-input">
-        <input mdInput name="gameName" [(ngModel)]="newEvent.game.name" placeholder="Game">
-    </md-form-field>
-    <md-form-field class="half-input">
-        <input mdInput max="{{newEvent.game.maxPlayers}}" min="1" name="minPlayers" [(ngModel)]="newEvent.game.minPlayers" placeholder="Min. # of players"
-            type="number">
-    </md-form-field>
-    <md-form-field class="half-input">
-        <input mdInput min="{{newEvent.game.minPlayers}}" name="maxPlayers" [(ngModel)]="newEvent.game.maxPlayers" placeholder="Max. # of players"
-            type="number">
-    </md-form-field>
-    <md-form-field class="half-input">
-        <input mdInput name="location" [(ngModel)]="newEvent.location" placeholder="Location">
-    </md-form-field>
-    <md-form-field class="half-input">
-        <input mdInput name="time" [(ngModel)]="time" placeholder="time" type="time">
-    </md-form-field>
-</div>
-<div mdDialogActions align="end">
-    <button color="primary" md-button mdDialogClose>CANCEL</button>
-    <button (click)="createEvent()" color="accent" [disabled]="!isValid()" md-button>CREATE EVENT</button>
-</div>
+<form #eventForm="ngForm" (ngSubmit)="createEvent()">
+    <div mdDialogContent>
+        <md-form-field class="full-input">
+            <input mdInput name="gameName" [(ngModel)]="newEvent.game.name" placeholder="Game" required>
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput max="{{newEvent.game.maxPlayers}}" min="1" name="minPlayers" [(ngModel)]="newEvent.game.minPlayers" placeholder="Min. # of players"
+                required type="number">
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput min="{{newEvent.game.minPlayers}}" name="maxPlayers" [(ngModel)]="newEvent.game.maxPlayers" placeholder="Max. # of players"
+                required type="number">
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput name="location" [(ngModel)]="newEvent.location" placeholder="Location" required>
+        </md-form-field>
+        <md-form-field class="half-input">
+            <input mdInput name="time" [(ngModel)]="time" placeholder="time" required type="time">
+        </md-form-field>
+    </div>
+    <div mdDialogActions align="end">
+        <button color="primary" md-button mdDialogClose>CANCEL</button>
+        <button color="accent" [disabled]="eventForm.form.invalid" md-button type="submit">CREATE EVENT</button>
+    </div>
+</form>

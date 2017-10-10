@@ -33,11 +33,4 @@ export class NewEventDialogComponent {
             parseInt(splitTime[1], 10));
         this.dialogRef.close(this.newEvent);
     }
-
-    isValid(): boolean {
-        return this.newEvent.game.name.length > 0
-            && this.newEvent.game.minPlayers > 0
-            && this.newEvent.game.minPlayers <= this.newEvent.game.maxPlayers
-            && this.newEvent.location.length > 0;
-    }
 }
