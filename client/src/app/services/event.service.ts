@@ -15,4 +15,8 @@ export class EventService {
     putEvent(event: Event): Observable<Object> {
         return this.http.put("http://localhost:8080/event", event);
     }
+
+    deleteEvent(event: Event): Observable<Object> {
+        return this.http.delete("http://localhost:8080/event?id=" + event._id);
+    }
 }

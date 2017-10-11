@@ -19,6 +19,11 @@ export class HomeComponent {
         this.getEvents();
     }
 
+    deleteEvent(event: Event): void {
+        this.eventService.deleteEvent(event)
+            .subscribe(() => this.getEvents());
+    }
+
     getEvents(): void {
         this.eventService.getEvents()
             .subscribe((events: Event[]) => this.events = events);
@@ -36,6 +41,7 @@ export class HomeComponent {
     }
 
     putEvent(event: Event): void {
-        this.eventService.putEvent(event).subscribe(() => this.getEvents());
+        this.eventService.putEvent(event)
+            .subscribe(() => this.getEvents());
     }
 }

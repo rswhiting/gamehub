@@ -1,6 +1,3 @@
-<button class="create-event-button" (click)="openNewEventDialog()" mat-fab matTooltip="Create event" matTooltipPosition="before">
-    <i class="material-icons">add</i>
-</button>
 <mat-card class="event-card" *ngFor="let event of events">
     <mat-card-title>
         {{event.game.name}}
@@ -13,7 +10,11 @@
         <p>
             <strong>Players:</strong> {{event.game.minPlayers}} - {{event.game.maxPlayers}}</p>
     </mat-card-content>
-    <mat-card-actions align="right">
-        <button color="accent" mat-button>JOIN</button>
+    <mat-card-actions align="end">
+        <button (click)="deleteEvent(event)" color="primary" mat-button *ngIf="event.isCreator">DELETE</button>
+        <button color="accent" mat-button *ngIf="!event.isCreator">JOIN</button>
     </mat-card-actions>
 </mat-card>
+<button class="create-event-button" (click)="openNewEventDialog()" mat-fab matTooltip="Create event" matTooltipPosition="before">
+    <i class="material-icons">add</i>
+</button>

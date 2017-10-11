@@ -10,13 +10,15 @@ import { Game } from "../models/game";
 })
 export class NewEventDialogComponent {
     newEvent: Event = {
+        _id: undefined,
         game: {
             name: "",
             minPlayers: 1,
             maxPlayers: 10
         },
         location: "",
-        time: undefined
+        time: undefined,
+        isCreator: undefined
     };
     time = "12:00";
 

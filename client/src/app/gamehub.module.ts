@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
 
 import { EventService } from "./services/event.service";
-import { GameService } from "./services/game.service";
 
 import { GameHubComponent } from "./gamehub.component";
 import { HomeComponent } from "./home/home.component";
@@ -51,8 +50,7 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes)
     ],
     providers: [
-        EventService,
-        GameService
+        EventService
     ],
     entryComponents: [
         NewEventDialogComponent
