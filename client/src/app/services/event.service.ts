@@ -6,17 +6,19 @@ import { Event } from "../models/event";
 
 @Injectable()
 export class EventService {
+    private static readonly BASE_URI = "https://gamehub-rswhiting.c9users.io:8081/";
+    
     constructor(private http: HttpClient) { }
 
     getEvents(): Observable<Object> {
-        return this.http.get("http://localhost:8080/event");
+        return this.http.get(EventService.BASE_URI + "event");
     }
 
     putEvent(event: Event): Observable<Object> {
-        return this.http.put("http://localhost:8080/event", event);
+        return this.http.put(EventService.BASE_URI + "event", event);
     }
 
     deleteEvent(event: Event): Observable<Object> {
-        return this.http.delete("http://localhost:8080/event?id=" + event._id);
+        return this.http.delete(EventService.BASE_URI + "event?id=" + event._id);
     }
 }
